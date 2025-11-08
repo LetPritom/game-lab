@@ -48,7 +48,7 @@ const GameDetails = () => {
                   shadow-[0_0_15px_rgba(255,255,0,0.6)] border-2 border-yellow-500 
                   active:scale-95 cursor-pointer"
             >
-              Download
+              Buy Now
             </button>
           </a>
         </div>
@@ -70,6 +70,7 @@ const GameDetails = () => {
           — where legends are made
         </p>
       </div>
+      
     </div>
     
   );

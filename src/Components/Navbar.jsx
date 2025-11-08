@@ -1,11 +1,15 @@
 /* eslint-disable no-undef */
-import React from "react";
+// import React, { useContext } from "react";
 import { NavLink, useParams } from "react-router";
 import logo from "../assets/logo.png";
+import { AuthContext } from "../Context/AuthContext";
 
 const Navbar = () => {
   const {id} = useParams();
   console.log(id)
+
+  // const {user,setUser} = useContext(AuthContext)
+  // console.log(user);
   return (
     <div className="">
       <div className="navbar bg-base-100 w-11/12 mx-auto m-2">
@@ -51,7 +55,7 @@ const Navbar = () => {
             {/* <a className="text-xl ml-2 cursor-pointer font-semibold  text-transparent bg-clip-text bg-linear-to-r from-[#632EE3] to-[#9F62F2]">
               HERO.OI
             </a> */}
-            <p className="hidden sm:block whitespace-nowrap">GAME.LaB</p>
+            <p className="hidden sm:block whitespace-nowrap">GAmE.LaB</p>
           </NavLink>
         </div>
         {/* <div className="navbar-center hidden lg:flex">
@@ -81,6 +85,9 @@ const Navbar = () => {
             </li>
           </ul>
           </div>
+          {
+
+          }
           <NavLink to='/login'>
             <button className="cursor-pointer py-1 px-2 rounded-md text-[#ff9c07d7] font-semibold border border-[#ff9c07d7]">
               Log In

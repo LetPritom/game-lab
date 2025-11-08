@@ -5,6 +5,8 @@ import GameDetails from "../pages/GameDetails";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Error from '../pages/Error'
+import Profile from "../pages/Profile";
+import ForgetPass from "../pages/ForgetPass";
 
 
 export const router = createBrowserRouter([
@@ -26,8 +28,16 @@ export const router = createBrowserRouter([
         element:<Login></Login>
       },
       {
+        path:'/profile' ,
+        element:<Profile></Profile>
+      },
+      {
         path:'/register' ,
         element:<Register></Register>
+      },
+      {
+        path:'/forget' ,
+        element:<ForgetPass></ForgetPass>
       },
     ]
   }

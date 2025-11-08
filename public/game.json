@@ -1,0 +1,102 @@
+[
+  {
+    "id": "1",
+    "title": "Roblox",
+    "coverPhoto": "https://i.ibb.co.com/Z6yBMD2t/5348266ea6c5e67b19d6a814cbbb70f6.jpg",
+    "category": "Sandbox / Multiplayer",
+    "downloadLink": "https://www.roblox.com/",
+    "description": "Roblox is a platform that lets users create, share, and play games created by other users, fostering creativity and community interaction.",
+    "ratings": "4.4",
+    "developer": "Roblox Corporation"
+  },
+  {
+    "id": "2",
+    "title": "Valorant",
+    "coverPhoto": "https://i.ibb.co.com/Tqh37T9H/channels4-profile.jpg",
+    "category": "FPS / Tactical Shooter",
+    "downloadLink": "https://playvalorant.com/",
+    "description": "Valorant is a 5v5 tactical shooter game where players combine precise gunplay with unique agent abilities to achieve victory.",
+    "ratings": "4.6",
+    "developer": "Riot Games"
+  },
+  {
+    "id": "3",
+    "title": "Among Us",
+    "coverPhoto": "https://i.ibb.co.com/h1yc0rRT/Among-Us-cover-art.jpg",
+    "category": "Party / Social Deduction",
+    "downloadLink": "https://www.innersloth.com/gameAmongUs.php",
+    "description": "Among Us is a multiplayer social deduction game where players work together to complete tasks while identifying the imposter among them.",
+    "ratings": "4.2",
+    "developer": "Innersloth"
+  },
+  {
+    "id": "4",
+    "title": "Need for Speed",
+    "coverPhoto": "https://i.ibb.co.com/q307v1fj/capsule-616x353-1.jpg",
+    "category": "Racing",
+    "downloadLink": "https://www.ea.com/games/need-for-speed",
+    "description": "Need for Speed delivers high-speed racing action with stunning cars and exciting street racing experiences.",
+    "ratings": "4.3",
+    "developer": "Electronic Arts"
+  },
+  {
+    "id": "5",
+    "title": "Forza Horizon 5",
+    "coverPhoto": "https://i.ibb.co.com/xp8Ybyf/118928215-forzahorizon5-11-16x9-wm-mercedes-amgprojectone.jpg",
+    "category": "Racing",
+    "downloadLink": "https://forzamotorsport.net/",
+    "description": "Forza Horizon 5 is an open-world racing game set in Mexico, featuring hundreds of cars and dynamic racing events.",
+    "ratings": "4.9",
+    "developer": "Playground Games"
+  },
+  {
+    "id": "6",
+    "title": "Forza Horizon 4",
+    "coverPhoto": "https://i.ibb.co.com/gMX8sP8P/Forza-Horizon-5-cover-art.jpg",
+    "category": "Racing",
+    "downloadLink": "https://forzamotorsport.net/",
+    "description": "Experience stunning graphics and diverse vehicles in this open-world racing adventure, driving across beautiful landscapes.",
+    "ratings": "4.8",
+    "developer": "Playground Games"
+  },
+  {
+    "id": "7",
+    "title": "Call of Duty: Black Ops",
+    "coverPhoto": "https://i.ibb.co.com/1Yz99cGV/capsule-616x353.jpg",
+    "category": "FPS / Action",
+    "downloadLink": "https://www.callofduty.com/blackops",
+    "description": "Call of Duty: Black Ops offers intense first-person shooter gameplay with gripping story missions and multiplayer battles.",
+    "ratings": "4.5",
+    "developer": "Treyarch"
+  },
+  {
+    "id": "8",
+    "title": "Call of Duty: Warzone",
+    "coverPhoto": "https://i.ibb.co.com/HTFjJjgS/COD-Warzone-Cover-Art.jpg",
+    "category": "FPS / Battle Royale",
+    "downloadLink": "https://www.callofduty.com/warzone",
+    "description": "Call of Duty: Warzone is a free-to-play battle royale game where squads fight for survival in massive maps with fast-paced action.",
+    "ratings": "4.6",
+    "developer": "Infinity Ward"
+  },
+  {
+    "id": "9",
+    "title": "Grand Theft Auto V",
+    "coverPhoto": "https://i.ibb.co.com/Jwxgg7bD/Grand-Theft-Auto-V.png",
+    "category": "Action / Adventure",
+    "downloadLink": "https://www.rockstargames.com/V/",
+    "description": "GTA V is an open-world action-adventure game set in Los Santos, with missions, exploration, and online multiplayer action.",
+    "ratings": "4.8",
+    "developer": "Rockstar Games"
+  },
+  {
+    "id": "10",
+    "title": "PUBG Mobile",
+    "coverPhoto": "https://i.ibb.co.com/SgwPyXR/677f50864ca22-com-tencent-ig.png",
+    "category": "FPS / Battle Royale",
+    "downloadLink": "https://www.pubgmobile.com/en-US/home.shtml",
+    "description": "PUBG Mobile is a fast-paced battle royale game where players fight for survival on dynamic maps, strategy, and victory.",
+    "ratings": "4.5",
+    "developer": "Krafton"
+  }
+]

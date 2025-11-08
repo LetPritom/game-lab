@@ -1,6 +1,7 @@
 import React from 'react';
 import useGameHooks from '../Hooks/useGameHooks';
 import GameSection from '../pages/GameSection';
+import ImageSlider from './ImageSlider';
 
 const Home = () => {
     const {games} =useGameHooks();
@@ -8,6 +9,7 @@ const Home = () => {
     console.log(gamesSort);
     return (
         <div> 
+            <ImageSlider></ImageSlider>
             <div className="popular w-11/12 mx-auto">
                 <h1 className='text-2xl font-bold'>Popular Games</h1>
             </div>

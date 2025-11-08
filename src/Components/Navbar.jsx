@@ -1,9 +1,11 @@
 /* eslint-disable no-undef */
 import React from "react";
-import { NavLink } from "react-router";
+import { NavLink, useParams } from "react-router";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
+  const {id} = useParams();
+  console.log(id)
   return (
     <div className="">
       <div className="navbar bg-base-100 w-11/12 mx-auto m-2">
@@ -34,10 +36,10 @@ const Navbar = () => {
                 <NavLink to="/">Home</NavLink>
               </li>
               <li>
-                <NavLink to="">Details</NavLink>
+                <NavLink to={`/detail/${id}`}>Details</NavLink>
               </li>
               <li>
-                <NavLink to="">Profile</NavLink>
+                <NavLink to="/profile">Profile</NavLink>
               </li>
             </ul>
           </div>
@@ -72,14 +74,14 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="">Details</NavLink>
+              <NavLink to={`/detail/${id}`}>Details</NavLink>
             </li>
             <li>
-              <NavLink to="">Profile</NavLink>
+              <NavLink to="/profile">Profile</NavLink>
             </li>
           </ul>
           </div>
-          <NavLink>
+          <NavLink to='/login'>
             <button className="cursor-pointer py-1 px-2 rounded-md text-[#ff9c07d7] font-semibold border border-[#ff9c07d7]">
               Log In
             </button>

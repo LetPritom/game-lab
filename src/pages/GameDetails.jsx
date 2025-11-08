@@ -11,7 +11,7 @@ const GameDetails = () => {
   if (!matchGame) return <div>Loading...</div>;
   console.log(matchGame);
   return (
-    <div className="w-11/12 mx-auto  h-[90vh]">
+    <div className="w-11/12 mx-auto my-5 py-5 px-2 h-[90vh]">
       <div
         className="card card-side  bg-yellow-400 
                  hover:bg-yellow-500 hover:scale-105 transition-all duration-300 
@@ -25,7 +25,7 @@ const GameDetails = () => {
             alt="Movie"
           />
         </figure>
-        <div className="card-body">
+        <div className="card-body rounded-lg">
           <h2 className="card-title font-bold text-2xl">
             {matchGame?.title} : {matchGame?.description}
           </h2>
@@ -36,6 +36,10 @@ const GameDetails = () => {
           <p className="font-semibold">
             Developed By{" "}
             <span className="text-[#ff9c07d7]">{matchGame?.developer}</span>
+          </p>
+          <p className="font-semibold">
+            Rating{" "}
+            <span className="text-[#ff9c07d7]">{matchGame?.ratings}</span>
           </p>
           <a rel="noopener noreferrer" href={matchGame?.downloadLink}>
             <button
@@ -67,6 +71,7 @@ const GameDetails = () => {
         </p>
       </div>
     </div>
+    
   );
 };
 

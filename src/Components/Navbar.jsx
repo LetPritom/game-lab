@@ -42,14 +42,14 @@ const Navbar = () => {
             </ul>
           </div>
           <NavLink
-            className="flex items-center text-xl px-2  mr-8 cursor-pointer font-semibold  text-transparent bg-clip-text bg-linear-to-r from-[#632EE3] to-[#9F62F2]"
+            className="flex items-center text-xl px-2  mr-8 cursor-pointer font-semibold text-[#ff9c07d7]"
             to="/"
           >
             <img className="h-10 w-10 mx-1" src={logo} alt="logo-image" />
             {/* <a className="text-xl ml-2 cursor-pointer font-semibold  text-transparent bg-clip-text bg-linear-to-r from-[#632EE3] to-[#9F62F2]">
               HERO.OI
             </a> */}
-            <p className="hidden sm:block whitespace-nowrap">HERO.OI</p>
+            <p className="hidden sm:block whitespace-nowrap">GAME.LaB</p>
           </NavLink>
         </div>
         {/* <div className="navbar-center hidden lg:flex">
@@ -67,7 +67,7 @@ const Navbar = () => {
         </div> */}
         <div className="navbar-end flex gap-6 mr-4 ">
           <div className="ul">
-            <ul className="gap-3 text-md font-semibold text-[#ff9c07d7]  hidden lg:flex">
+            <ul className="gap-3 text-md font-semibold text-white  hidden lg:flex">
             <li>
               <NavLink to="/">Home</NavLink>
             </li>

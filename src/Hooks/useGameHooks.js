@@ -3,18 +3,20 @@ import { useEffect, useState } from "react"
 
 
 const useGameHooks = () => {
-    const [game, setGame] = useState([]);
+    const [games, setGame] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error , setError] = useState(null);
 
     useEffect(() => {
-        axios('/game.json')
-        .then((data) => setGame(data.data))
+        axios('../game.json')
+        .then((data) =>{ setGame(data.data)
+            setLoading(false)
+        })
         .catch((err) => setError(err))
-        .finally(() => setLoading(false))
+        // .finally(() => setLoading(false))
     } , [])
 
-    return {game , loading , error};
+    return {games , loading , error};
 }
 
 export default useGameHooks;

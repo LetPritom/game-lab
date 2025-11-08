@@ -6,7 +6,7 @@
     "category": "Sandbox / Multiplayer",
     "downloadLink": "https://www.roblox.com/",
     "description": "Roblox is a platform that lets users create, share, and play games created by other users, fostering creativity and community interaction.",
-    "ratings": "4.4",
+    "ratings": 4.4,
     "developer": "Roblox Corporation"
   },
   {
@@ -16,7 +16,7 @@
     "category": "FPS / Tactical Shooter",
     "downloadLink": "https://playvalorant.com/",
     "description": "Valorant is a 5v5 tactical shooter game where players combine precise gunplay with unique agent abilities to achieve victory.",
-    "ratings": "4.6",
+    "ratings": 4.6,
     "developer": "Riot Games"
   },
   {
@@ -26,7 +26,7 @@
     "category": "Party / Social Deduction",
     "downloadLink": "https://www.innersloth.com/gameAmongUs.php",
     "description": "Among Us is a multiplayer social deduction game where players work together to complete tasks while identifying the imposter among them.",
-    "ratings": "4.2",
+    "ratings": 4.2,
     "developer": "Innersloth"
   },
   {
@@ -36,7 +36,7 @@
     "category": "Racing",
     "downloadLink": "https://www.ea.com/games/need-for-speed",
     "description": "Need for Speed delivers high-speed racing action with stunning cars and exciting street racing experiences.",
-    "ratings": "4.3",
+    "ratings": 4.3,
     "developer": "Electronic Arts"
   },
   {
@@ -46,7 +46,7 @@
     "category": "Racing",
     "downloadLink": "https://forzamotorsport.net/",
     "description": "Forza Horizon 5 is an open-world racing game set in Mexico, featuring hundreds of cars and dynamic racing events.",
-    "ratings": "4.9",
+    "ratings": 4.9,
     "developer": "Playground Games"
   },
   {
@@ -56,7 +56,7 @@
     "category": "Racing",
     "downloadLink": "https://forzamotorsport.net/",
     "description": "Experience stunning graphics and diverse vehicles in this open-world racing adventure, driving across beautiful landscapes.",
-    "ratings": "4.8",
+    "ratings": 4.8,
     "developer": "Playground Games"
   },
   {
@@ -66,7 +66,7 @@
     "category": "FPS / Action",
     "downloadLink": "https://www.callofduty.com/blackops",
     "description": "Call of Duty: Black Ops offers intense first-person shooter gameplay with gripping story missions and multiplayer battles.",
-    "ratings": "4.5",
+    "ratings": 4.5,
     "developer": "Treyarch"
   },
   {
@@ -76,7 +76,7 @@
     "category": "FPS / Battle Royale",
     "downloadLink": "https://www.callofduty.com/warzone",
     "description": "Call of Duty: Warzone is a free-to-play battle royale game where squads fight for survival in massive maps with fast-paced action.",
-    "ratings": "4.6",
+    "ratings": 4.6,
     "developer": "Infinity Ward"
   },
   {
@@ -86,7 +86,7 @@
     "category": "Action / Adventure",
     "downloadLink": "https://www.rockstargames.com/V/",
     "description": "GTA V is an open-world action-adventure game set in Los Santos, with missions, exploration, and online multiplayer action.",
-    "ratings": "4.8",
+    "ratings": 4.8,
     "developer": "Rockstar Games"
   },
   {
@@ -96,7 +96,7 @@
     "category": "FPS / Battle Royale",
     "downloadLink": "https://www.pubgmobile.com/en-US/home.shtml",
     "description": "PUBG Mobile is a fast-paced battle royale game where players fight for survival on dynamic maps, strategy, and victory.",
-    "ratings": "4.5",
+    "ratings": 4.5,
     "developer": "Krafton"
   }
 ]

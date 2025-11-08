@@ -1,12 +1,24 @@
 import React from 'react';
 import useGameHooks from '../Hooks/useGameHooks';
+import GameSection from '../pages/GameSection';
 
 const Home = () => {
-    const {game} =useGameHooks();
-    console.log(game)
+    const {games} =useGameHooks();
+    const gamesSort = games.sort((a, b) => b.ratings - a.ratings )
+    console.log(gamesSort);
     return (
-        <div>
-            <h1>Home</h1>
+        <div> 
+            <div className="popular w-11/12 mx-auto">
+                <h1 className='text-2xl font-bold'>Popular Games</h1>
+            </div>
+
+            <div className="section px-5 w-11/12 mx-auto grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 space-y-5 my-8 ">
+            
+            {
+                gamesSort.map((game,index) => <GameSection key={index} game={game}></GameSection>)
+            }
+            
+            </div>
         </div>
     );
 };

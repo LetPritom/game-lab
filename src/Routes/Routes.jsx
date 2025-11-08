@@ -4,6 +4,7 @@ import Home from "../Components/Home";
 import GameDetails from "../pages/GameDetails";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Error from '../pages/Error'
 
 
 export const router = createBrowserRouter([

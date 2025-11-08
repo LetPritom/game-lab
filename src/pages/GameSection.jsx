@@ -42,5 +42,5 @@ const GameSection = ({game}) => {
     </div>
     );
 };
-
+ 
 export default GameSection;

@@ -12,17 +12,30 @@ const Login = () => {
           <div className="card-body">
             <form className="">
               <fieldset className="fieldset">
+
+                {/* email */}
                 <label className="label text-white">Email</label>
-                <input type="email" className="input border border-white text-white placeholder-white" placeholder="Email" />
+                <input type="email" className="input border border-white text-white placeholder-gray-500" placeholder="Email" />
+
+                {/* password */}
+
+
                 <label className="label text-white">Password</label>
                 <input
                   type="password"
-                  className="input border border-white text-white placeholder-white"
+                  className="input border border-white text-white placeholder-gray-500"
                   placeholder="Password"
                 />
+                 
+                 {/* forget password */}
+
                 <div>
                   <a className="link link-hover">Forgot password?</a>
                 </div>
+
+                {/* button */}
+
+
                 <button className="btn btn-neutral  border-white mt-4">Login</button>
                 <button
                   type="button"

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import slider1 from "../assets/slider1.jpg";
 import slider2 from "../assets/slider2.jpg";

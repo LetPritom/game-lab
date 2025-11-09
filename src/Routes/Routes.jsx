@@ -33,7 +33,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profile></Profile>,
+        element: (
+          <Private>
+            <Profile></Profile>
+          </Private>
+        ),
       },
       {
         path: "/register",

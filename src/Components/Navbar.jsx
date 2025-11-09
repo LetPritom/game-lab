@@ -5,30 +5,35 @@ import logo from "../assets/logo.png";
 import { AuthContext } from "../Context/AuthContext";
 import { useContext } from "react";
 import { toast } from "react-toastify";
-import { ClipLoader } from "react-spinners"
+import { ClipLoader } from "react-spinners";
 
 const Navbar = () => {
   const { id } = useParams();
 
-  const { user, logOutFunction, setUser , loading} = useContext(AuthContext);
+  const { user, logOutFunction, setUser, loading, updateProfileFunc } = useContext(AuthContext);
 
   // console.log(user);
-console.log(loading);
-  const handleLogOut =() => {
+  console.log(loading);
+  const handleLogOut = () => {
     logOutFunction()
-    .then(() => {
-      toast.success('sign Out')
-      setUser(null);
-    })
-    .catch((err) => {
-      toast.error(err)
-    })
+      .then(() => {
+        toast.success("sign Out");
+        setUser(null);
+      })
+      .catch((err) => {
+        toast.error(err);
+      });
+  };
+
+  // ekhane profile update function
+
+  const updateProfile =() => {
+    updateProfileFunc()
 
   }
-  // console.log(id)
+  
 
-  // const {user,setUser} = useContext(AuthContext)
-  // console.log(user);
+  
   return (
     <div className="">
       <div className="navbar bg-base-100 w-11/12 mx-auto m-2">
@@ -61,9 +66,7 @@ console.log(loading);
               <li>
                 <NavLink to={`/detail/${id}`}>Details</NavLink>
               </li>
-              <li>
-                <NavLink to="/profile">Profile</NavLink>
-              </li>
+              <li>{user && <NavLink to="/profile">Profile</NavLink>}</li>
             </ul>
           </div>
           <NavLink
@@ -99,12 +102,12 @@ console.log(loading);
               <li>
                 <NavLink to={`/detail/${id}`}>Details</NavLink>
               </li>
-              <li>
-                <NavLink to="/profile">Profile</NavLink>
-              </li>
+              <li>{user && <NavLink to="/profile">Profile</NavLink>}</li>
             </ul>
           </div>
-          {loading? <ClipLoader color='#ff9c07d7' />: user ? (
+          {loading ? (
+            <ClipLoader color="#ff9c07d7" />
+          ) : user ? (
             <div className="img">
               <button
                 className="cursor-pointer"
@@ -129,14 +132,26 @@ console.log(loading);
                 }
               >
                 <div className="down flex flex-col justify-center">
-                  <img className=" my-2 w-8 h-8 rounded-full" src={user?.photoURL} alt="" />
-                  <p className="text-sm font-semibold my-2">{user?.displayName}</p>
+                  <NavLink to='/profile'>
+                    {" "}
+                    <img
+                      className=" my-2 w-8 h-8 rounded-full"
+                      src={user?.photoURL}
+                      alt=""
+                    />
+                  </NavLink>
+                  <p className="text-sm font-semibold my-2">
+                    {user?.displayName}
+                  </p>
                 </div>
 
                 <div className="button">
-                  <button 
-                  onClick={handleLogOut}
-                  className="border btn  border-[#ff9c07d7]">Log Out</button>
+                  <button
+                    onClick={handleLogOut}
+                    className="border btn  border-[#ff9c07d7]"
+                  >
+                    Log Out
+                  </button>
                 </div>
               </ul>
             </div>

@@ -4,41 +4,45 @@ import Home from "../Components/Home";
 import GameDetails from "../pages/GameDetails";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import Error from '../pages/Error'
+import Error from "../pages/Error";
 import Profile from "../pages/Profile";
 import ForgetPass from "../pages/ForgetPass";
-
+import Private from "../PrivateRoute/Private";
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Root></Root>,
-    errorElement:<Error></Error>,
-    children:[
+    errorElement: <Error></Error>,
+    children: [
       {
-        index:true ,
-        element:<Home></Home>
+        index: true,
+        element: <Home></Home>,
       },
       {
-        path:'/detail/:id' ,
-        element:<GameDetails></GameDetails>
+        path: "/detail/:id",
+        element: (
+          <Private>
+            <GameDetails></GameDetails>
+          </Private>
+        ),
       },
       {
-        path:'/login' ,
-        element:<Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path:'/profile' ,
-        element:<Profile></Profile>
+        path: "/profile",
+        element: <Profile></Profile>,
       },
       {
-        path:'/register' ,
-        element:<Register></Register>
+        path: "/register",
+        element: <Register></Register>,
       },
       {
-        path:'/forget' ,
-        element:<ForgetPass></ForgetPass>
+        path: "/forget",
+        element: <ForgetPass></ForgetPass>,
       },
-    ]
-  }
-])
+    ],
+  },
+]);

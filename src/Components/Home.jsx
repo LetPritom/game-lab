@@ -2,8 +2,11 @@ import React from 'react';
 import useGameHooks from '../Hooks/useGameHooks';
 import GameSection from '../pages/GameSection';
 import ImageSlider from './ImageSlider';
+import useTitle from '../Hooks/useDynamicTitle';
 
 const Home = () => {
+
+      useTitle('Home');
     const {games} =useGameHooks();
     const gamesSort = games.sort((a, b) => b.ratings - a.ratings )
     // console.log(gamesSort);

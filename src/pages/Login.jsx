@@ -1,10 +1,13 @@
 
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 import { useContext } from "react";
 import { toast } from "react-toastify";
+import useTitle from "../Hooks/useDynamicTitle";
 
 const Login = () => {
+
+  useTitle('Login');
 
   const {
     signInWithEmailAndPasswordFunc,
@@ -12,9 +15,12 @@ const Login = () => {
     setUser,
     setLoading,
 
-           
+     } = useContext(AuthContext);
 
-      } = useContext(AuthContext);
+     const location = useLocation();
+     const navigate = useNavigate();
+     const from = location.state || '/' ;
+     console.log(location)
  
 
    // user password signin
@@ -33,6 +39,7 @@ const Login = () => {
       setUser(result.user)
        setLoading(false);
       toast.success('Login Successful')
+      navigate(from);
       })
 
       .catch((err) => {
@@ -49,6 +56,7 @@ const Login = () => {
   .then((result) => {
     console.log(result.user.photoURL)
     setLoading(false);
+    navigate(from);
     toast.success('successful your sign in by google')
   })
   .catch((err) => {

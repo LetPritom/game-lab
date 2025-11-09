@@ -1,14 +1,24 @@
 import React from "react";
 import { useParams } from "react-router";
 import useGameHooks from "../Hooks/useGameHooks";
+import useTitle from "../Hooks/useDynamicTitle";
 
 const GameDetails = () => {
+
+  useTitle('Game Details');
+
   const { id } = useParams();
   const { games } = useGameHooks();
   // console.log(games);
-  if (!games) return <div className="text-white">Loading..</div>;
+  if (!games) return <div className="text-white">Loading....</div>;
   const matchGame = games.find((game) => String(game.id) === id);
-  if (!matchGame) return <div>Loading...</div>;
+  if (!matchGame)
+    return (
+      <div className=" text-3xl text-[#ff9c07d7] h-[50vh] flex justify-center items-center w-11/12 mx-auto">
+       Please Go to Home Section and Click any Game card Of Popular Game and See Game
+        Details
+      </div>
+    );
   // console.log(matchGame);
   return (
     <div className="w-11/12 mx-auto my-5 py-5 px-2 h-auto">
@@ -70,9 +80,7 @@ const GameDetails = () => {
           — where legends are made
         </p>
       </div>
-      
     </div>
-    
   );
 };
 

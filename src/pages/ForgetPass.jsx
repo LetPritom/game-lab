@@ -1,9 +1,11 @@
 import React, { useContext, useRef } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import { toast } from "react-toastify";
+import useTitle from "../Hooks/useDynamicTitle";
 
 const ForgetPass = () => {
   
+  useTitle('Rest-password');
 
   const {
 

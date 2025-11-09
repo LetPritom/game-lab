@@ -1,6 +1,10 @@
 import React from 'react';
+import useTitle from '../Hooks/useDynamicTitle';
 
 const Profile = () => {
+
+  useTitle('Profile')
+  
     return (
         <div className="hero bg-white min-h-screen ">
       <div className="hero-content flex-col">

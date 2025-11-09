@@ -1,14 +1,14 @@
-// /* eslint-disable no-undef */
 
-// import { Link, useNavigate } from 'react-router';
-// // import { toast } from 'react-toastify';
 import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 
 import { Link, useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import useTitle from '../Hooks/useDynamicTitle';
 
 const Register = () => {
+
+  useTitle('Register')
 
   const {createUserWithEmailAndPassFunc,
           updateProfileFunc,
@@ -16,7 +16,6 @@ const Register = () => {
           signinWithGoogle,
           setLoading,
           logOutFunction,
-          user,
           setUser,
 
 
@@ -77,6 +76,7 @@ const Register = () => {
   signinWithGoogle()
   .then((result) => {
     console.log(result.user.photoURL)
+    navigate('/')
     toast.success('successful your sign in by google')
   })
   .catch((err) => {

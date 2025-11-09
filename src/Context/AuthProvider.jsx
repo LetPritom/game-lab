@@ -1,31 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import { AuthContext } from './AuthContext';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile,} from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile,} from 'firebase/auth';
 import { auth } from '../Firebase/firebase.config';
 
  const googleProvider = new GoogleAuthProvider ;
 
 const AuthProvider = ({children}) => {
 
-        const [user , setUser] = useState(null)
-    // const [ loading , setLoading ] = useState(true)
+    const [user , setUser] = useState(null)
+    const [ loading , setLoading ] = useState(true)
     console.log(user);
 
     // ekhane Registration er funtion
 
     const createUserWithEmailAndPassFunc = (email,password) => {
+        setLoading(true)
        return createUserWithEmailAndPassword (auth, email , password)
     }; 
 
     // ekhane email verification
 
     const emailVerification =() => {
+        setLoading(true)
         return sendEmailVerification(auth.currentUser)
     }
 
        // ekhane Login Funtion
 
     const signInWithEmailAndPasswordFunc = (email,password) => {
+        setLoading(true)
        return signInWithEmailAndPassword(auth, email, password)
     }
          
@@ -33,6 +36,7 @@ const AuthProvider = ({children}) => {
     // ekhane GoogleSignIn function 
 
     const signinWithGoogle = () => {
+        setLoading(true)
         return signInWithPopup(auth , googleProvider)
     }
 
@@ -41,6 +45,7 @@ const AuthProvider = ({children}) => {
         // ekhane updated profile function
     
     const updateProfileFunc = (displayName,photoURL) => {
+        setLoading(true)
         return updateProfile(auth.currentUser,{
             displayName,
             photoURL
@@ -51,7 +56,8 @@ const AuthProvider = ({children}) => {
     //  forgetPassword
 
     const resetPasswordFunction = (email) => {
-        sendPasswordResetEmail(auth , email)
+        setLoading(true)
+      return  sendPasswordResetEmail(auth , email)
     }
 
 
@@ -59,12 +65,11 @@ const AuthProvider = ({children}) => {
     // log out function
 
     const logOutFunction = () => {
+        setLoading(true)
         return signOut(auth)
     }
 
-   
-
-
+//    global data
 
     const authInfo = {
       createUserWithEmailAndPassFunc,
@@ -75,13 +80,28 @@ const AuthProvider = ({children}) => {
       logOutFunction,
       resetPasswordFunction ,
       user,
+      loading,
       setUser,
+      setLoading
     }
 
 
+    
+ 
 
 
-    //   useEffect()
+
+  useEffect(() => {  
+
+    const unsubscribe = onAuthStateChanged(auth, (crrUser) => {
+        setUser(crrUser);
+        setLoading(false);
+    })
+
+    return () => {
+        unsubscribe();
+    };
+  } , [] )
 
     
 

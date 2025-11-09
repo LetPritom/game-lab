@@ -5,13 +5,15 @@ import logo from "../assets/logo.png";
 import { AuthContext } from "../Context/AuthContext";
 import { useContext } from "react";
 import { toast } from "react-toastify";
+import { ClipLoader } from "react-spinners"
 
 const Navbar = () => {
   const { id } = useParams();
 
-  const { user, logOutFunction, setUser } = useContext(AuthContext);
-  console.log(user);
+  const { user, logOutFunction, setUser , loading} = useContext(AuthContext);
 
+  // console.log(user);
+console.log(loading);
   const handleLogOut =() => {
     logOutFunction()
     .then(() => {
@@ -102,7 +104,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          {user ? (
+          {loading? <ClipLoader color='#ff9c07d7' />: user ? (
             <div className="img">
               <button
                 className="cursor-pointer"

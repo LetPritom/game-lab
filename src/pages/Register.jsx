@@ -5,7 +5,7 @@
 import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { toast } from "react-toastify";
 
 const Register = () => {
@@ -14,11 +14,15 @@ const Register = () => {
           updateProfileFunc,
           emailVerification,
           signinWithGoogle,
+          setLoading,
+          logOutFunction,
           user,
           setUser,
 
 
   } = useContext(AuthContext);
+
+  const navigate = useNavigate()
   // console.log(createUserWithEmailAndPassFunc);
   // toast
 
@@ -44,8 +48,18 @@ const Register = () => {
          updateProfileFunc( displayName , photoURL)
          .then(() => {toast.success('Profile update')
               emailVerification().then(() => {
-                toast.info('Please Check Your Email For verification!')})
-            // setUser(result.user)
+                setLoading(false)
+                
+                // signOut kora hocche naile user theke jacche
+                
+                logOutFunction()
+                .then(() => {
+                  toast.info('sign Up Successfully Please Check Your Email For verification!')});
+                  setUser(null);
+                  navigate('/login')
+                })
+                
+                // setUser(result.user)
                })
 
           .catch((err) => {toast.error(err.message)})

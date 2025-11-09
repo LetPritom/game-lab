@@ -10,10 +10,11 @@ const Login = () => {
     signInWithEmailAndPasswordFunc,
     signinWithGoogle,
     setUser,
+    setLoading,
 
            
 
-          } = useContext(AuthContext);
+      } = useContext(AuthContext);
  
 
    // user password signin
@@ -29,8 +30,9 @@ const Login = () => {
         const {emailVerified} = result.user;
         if(!emailVerified) return toast.error('Please Verify Your Email')
         // console.log(result.user.emailVerified);
-      toast.success('Login Successful')
       setUser(result.user)
+       setLoading(false);
+      toast.success('Login Successful')
       })
 
       .catch((err) => {
@@ -46,14 +48,18 @@ const Login = () => {
   signinWithGoogle()
   .then((result) => {
     console.log(result.user.photoURL)
+    setLoading(false);
     toast.success('successful your sign in by google')
   })
   .catch((err) => {
     toast.error(err.message , 'google')
+    console.log(err)
   })
 
  }
 
+
+ 
 
    // reset password
 

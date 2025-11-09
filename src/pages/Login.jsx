@@ -1,60 +1,61 @@
-// import React, { useContext } from "react";
+
 import { Link } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
-// import { toast } from "react-toastify";
+import { useContext } from "react";
+import { toast } from "react-toastify";
 
 const Login = () => {
-  // const {
-  //   signInWithEmailAndPasswordFunc,
-  //   signInWithPopupGoogleFunc,
-  //   // signInWithEmailFunc,
-  //   // sendPasswordResetEmailFunc,
-  //   // signInWithPopupGoogleFunc,
-  //   setUser,
-  //   setLoading,
-  // } = useContext(AuthContext);
 
-  // const handleSignin = (e) => {
-  //   console.log("button is clicked");
-  //   e.preventDefault();
-  //   const email = e.target.email?.value;
-  //   const password = e.target.password?.value;
-  //   console.log("sign up function entered", { email, password });
+  const {
+    signInWithEmailAndPasswordFunc,
+    signinWithGoogle,
+    setUser,
 
-  //   signInWithEmailAndPasswordFunc(email, password)
-  //     .then((result) => {
-  //       const { emailVerified } = result.user;
+           
 
-  //       if (!emailVerified) return toast.error("Please verify Your Email");
+          } = useContext(AuthContext);
+ 
 
-  //       console.log(result.user);
+   // user password signin
 
-  //       toast.success("successful");
+ const handleLogin = (e) => {
+      e.preventDefault();
+      const email= e.target.email?.value;
+      const password= e.target.password?.value;
+      // console.log('login', email,password)
 
-  //       setUser(result.user);
-  //       // navigate(from);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       toast.error(err.message);
-  //     });
-  // };
+      signInWithEmailAndPasswordFunc(email,password)
+      .then((result) => {
+        const {emailVerified} = result.user;
+        if(!emailVerified) return toast.error('Please Verify Your Email')
+        // console.log(result.user.emailVerified);
+      toast.success('Login Successful')
+      setUser(result.user)
+      })
 
-  // const handleGoogleSignin = () => {
-  //   console.log("google signin");
-  //   signInWithPopupGoogleFunc()
-  //     .then((res) => {
-  //       console.log(res);
-  //       setLoading(false);
-  //       setUser(res.user);
-  //       // navigate(from);
-  //       toast.success("Signin successful");
-  //     })
-  //     .catch((e) => {
-  //       console.log(e);
-  //       toast.error(e.message);
-  //     });
-  // };
+      .catch((err) => {
+        toast.error(err.message);
+      })
+ }
+  
+
+//  googleSignIN
+
+ const handleGoogleSignin = () => {
+
+  signinWithGoogle()
+  .then((result) => {
+    console.log(result.user.photoURL)
+    toast.success('successful your sign in by google')
+  })
+  .catch((err) => {
+    toast.error(err.message , 'google')
+  })
+
+ }
+
+
+   // reset password
 
   return (
     <div className="hero bg-white min-h-screen ">
@@ -64,11 +65,12 @@ const Login = () => {
         </div>
         <div className="card bg-white/10 backdrop-blur-md border-2 border-[#ff9c07d7] w-full max-w-sm shrink-0 shadow-2xl">
           <div className="card-body">
-            <form className="">
+            <form onSubmit={handleLogin} className="">
               <fieldset className="fieldset">
                 {/* email */}
                 <label className="label text-white">Email</label>
                 <input
+                name="email"
                   type="email"
                   className="input border border-white text-white placeholder-gray-500"
                   placeholder="Email"
@@ -78,6 +80,7 @@ const Login = () => {
 
                 <label className="label text-white">Password</label>
                 <input
+                  name="password"
                   type="password"
                   className="input border border-white text-white placeholder-gray-500"
                   placeholder="Password"
@@ -86,7 +89,7 @@ const Login = () => {
                 {/* forget password */}
                 <Link to="/forget">
                   <div>
-                    <a className="link link-hover">Forgot password?</a>
+                    <p className="link link-hover">Forgot password?</p>
                   </div>
                 </Link>
 
@@ -104,6 +107,7 @@ const Login = () => {
 
                 <button
                   type="button"
+                  onClick={handleGoogleSignin}
                   // onClick={handleGoogleSignin}
                   className="flex items-center justify-center gap-3 text-white border border-[#ff9c07d7] px-5 py-2 rounded-lg w-full font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
                 >

@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useContext, useRef } from "react";
+import { AuthContext } from "../Context/AuthContext";
+import { toast } from "react-toastify";
 
 const ForgetPass = () => {
+  
+
+  const {
+
+    resetPasswordFunction ,
+  } = useContext(AuthContext);
+
+  const emailRef = useRef(null);
+
+
+  const handleRestPassword = () => {
+      const email = emailRef.current.value;
+      console.log(email);
+
+    resetPasswordFunction (email) 
+    .then(() => {
+      toast.success('success pass reset')
+    })
+    .catch((err) => {
+      toast.error(err.message);
+    })
+
+  }
+
+
+
   return (
     <div className="hero bg-white min-h-screen ">
       <div className="hero-content flex-col">
@@ -14,6 +42,7 @@ const ForgetPass = () => {
                 {/* email */}
                 <label className="label text-white">Email</label>
                 <input
+                  ref={emailRef}
                   type="email"
                   className="input border border-white text-white placeholder-gray-500"
                   placeholder="Email"
@@ -21,7 +50,10 @@ const ForgetPass = () => {
 
                 {/* forget password button*/}
 
-                <button className="btn btn-neutral text-[#ff9c07d7]  border-white mt-4">
+                <button
+                onClick={handleRestPassword}
+                 type="button"
+                 className="btn btn-neutral text-[#ff9c07d7]  border-white mt-4">
                   Reset
                 </button>
               </fieldset>

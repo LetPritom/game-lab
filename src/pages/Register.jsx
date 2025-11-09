@@ -1,13 +1,75 @@
 // /* eslint-disable no-undef */
-// import React, { useContext } from 'react';
+
 // import { Link, useNavigate } from 'react-router';
 // // import { toast } from 'react-toastify';
-// import { AuthContext } from '../Context/AuthContext';
+import { useContext } from 'react';
+import { AuthContext } from '../Context/AuthContext';
 
 import { Link } from "react-router";
+import { toast } from "react-toastify";
 
 const Register = () => {
+
+  const {createUserWithEmailAndPassFunc,
+          updateProfileFunc,
+          emailVerification,
+          signinWithGoogle,
+          user,
+          setUser,
+
+
+  } = useContext(AuthContext);
+  // console.log(createUserWithEmailAndPassFunc);
   // toast
+
+  const handleRegister =(e) => {
+    e.preventDefault();
+    const displayName = e.target.name?.value;
+    const email = e.target.email?.value;
+    const password = e.target.password?.value;
+    const photoURL = e.target.photo?.value;
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).+$/ ;
+
+    if(password.length < 6) {
+      return toast.error('Password Should be At least 6 Digit')
+    } else if (!passwordRegex.test(password)) {
+      return  toast.warning("Password must contain at least one uppercase and one lowercase letter!");
+    }
+
+    // console.log('button was clicked',displayName,email, password,photUrl);
+
+    createUserWithEmailAndPassFunc(email,password)
+    .then((result) => {
+
+         updateProfileFunc( displayName , photoURL)
+         .then(() => {toast.success('Profile update')
+              emailVerification().then(() => {
+                toast.info('Please Check Your Email For verification!')})
+            // setUser(result.user)
+               })
+
+          .catch((err) => {toast.error(err.message)})
+           console.log(result);
+    })
+    .catch((err) => {
+      toast.error(err.message);
+    })
+
+
+  }
+
+  const handleGoogleSignin = () => {
+
+  signinWithGoogle()
+  .then((result) => {
+    console.log(result.user.photoURL)
+    toast.success('successful your sign in by google')
+  })
+  .catch((err) => {
+    toast.error(err.message , 'google')
+  })
+
+ }
 
   return (
     <div className="hero bg-white min-h-screen ">
@@ -18,7 +80,7 @@ const Register = () => {
         <div className="card bg-white/10 backdrop-blur-md border-2 border-[#ff9c07d7] w-full max-w-sm shrink-0 shadow-2xl">
           <div className="card-body">
             <form
-              //  onSubmit={'handleSignup'}
+               onSubmit={handleRegister}
               className=""
             >
               <fieldset className="fieldset">
@@ -72,8 +134,8 @@ const Register = () => {
 
                 <button
                   type="button"
-                  // onClick={'handleGoogleSignin'}
-                  className="flex items-center justify-center gap-3 border border-[#ff9c07d7] text-[white] px-5 py-2 rounded-lg w-full font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
+                  onClick={handleGoogleSignin}
+                  className="btn flex items-center justify-center gap-3 border border-[#ff9c07d7] text-[white] px-5 py-2 rounded-lg w-full font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
                 >
                   <img
                     src="https://www.svgrepo.com/show/475656/google-color.svg"
@@ -96,6 +158,9 @@ const Register = () => {
           </div>
         </div>
       </div>
+      {/* {
+        user? 'ache' : "nei"
+      } */}
     </div>
   );
 };

@@ -3,10 +3,27 @@
 import { NavLink, useParams } from "react-router";
 import logo from "../assets/logo.png";
 import { AuthContext } from "../Context/AuthContext";
+import { useContext } from "react";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
-  const {id} = useParams();
-  console.log(id)
+  const { id } = useParams();
+
+  const { user, logOutFunction, setUser } = useContext(AuthContext);
+  console.log(user);
+
+  const handleLogOut =() => {
+    logOutFunction()
+    .then(() => {
+      toast.success('sign Out')
+      setUser(null);
+    })
+    .catch((err) => {
+      toast.error(err)
+    })
+
+  }
+  // console.log(id)
 
   // const {user,setUser} = useContext(AuthContext)
   // console.log(user);
@@ -74,27 +91,60 @@ const Navbar = () => {
         <div className="navbar-end flex gap-6 mr-4 ">
           <div className="ul">
             <ul className="gap-3 text-md font-semibold text-white  hidden lg:flex">
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to={`/detail/${id}`}>Details</NavLink>
-            </li>
-            <li>
-              <NavLink to="/profile">Profile</NavLink>
-            </li>
-          </ul>
+              <li>
+                <NavLink to="/">Home</NavLink>
+              </li>
+              <li>
+                <NavLink to={`/detail/${id}`}>Details</NavLink>
+              </li>
+              <li>
+                <NavLink to="/profile">Profile</NavLink>
+              </li>
+            </ul>
           </div>
-          {
+          {user ? (
+            <div className="img">
+              <button
+                className="cursor-pointer"
+                popoverTarget="popover-1"
+                style={
+                  { anchorName: "--anchor-1" } /* as React.CSSProperties */
+                }
+              >
+                <img
+                  className="h-10 w-10 rounded-full"
+                  src={user.photoURL}
+                  alt="user-image"
+                />
+              </button>
 
-          }
-          <NavLink to='/login'>
-            <button className="cursor-pointer py-1 px-2 rounded-md text-[#ff9c07d7] font-semibold border border-[#ff9c07d7]">
-              Log In
-            </button>
-          </NavLink>
-            
-          
+              <ul
+                className="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
+                popover="auto"
+                id="popover-1"
+                style={
+                  { positionAnchor: "--anchor-1" } /* as React.CSSProperties */
+                }
+              >
+                <div className="down flex flex-col justify-center">
+                  <img className=" my-2 w-8 h-8 rounded-full" src={user?.photoURL} alt="" />
+                  <p className="text-sm font-semibold my-2">{user?.displayName}</p>
+                </div>
+
+                <div className="button">
+                  <button 
+                  onClick={handleLogOut}
+                  className="border btn  border-[#ff9c07d7]">Log Out</button>
+                </div>
+              </ul>
+            </div>
+          ) : (
+            <NavLink to="/login">
+              <button className="cursor-pointer py-1 px-2 rounded-md text-[#ff9c07d7] font-semibold border border-[#ff9c07d7]">
+                Log In
+              </button>
+            </NavLink>
+          )}
         </div>
       </div>
     </div>

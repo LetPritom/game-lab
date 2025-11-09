@@ -9,9 +9,9 @@ const GameDetails = () => {
   if (!games) return <div className="text-white">Loading..</div>;
   const matchGame = games.find((game) => String(game.id) === id);
   if (!matchGame) return <div>Loading...</div>;
-  console.log(matchGame);
+  // console.log(matchGame);
   return (
-    <div className="w-11/12 mx-auto my-5 py-5 px-2 h-[90vh]">
+    <div className="w-11/12 mx-auto my-5 py-5 px-2 h-auto">
       <div
         className="card card-side  bg-yellow-400 
                  hover:bg-yellow-500 hover:scale-105 transition-all duration-300 

@@ -4,7 +4,7 @@ import rating from '../assets/icon-ratings.png'
 
 const GameSection = ({game}) => {
     const {id} = game;
-    console.log(id);
+    // console.log(id);
     return (
         <div>
       <NavLink to={`/detail/${id}`}>

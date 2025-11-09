@@ -6,7 +6,7 @@ import ImageSlider from './ImageSlider';
 const Home = () => {
     const {games} =useGameHooks();
     const gamesSort = games.sort((a, b) => b.ratings - a.ratings )
-    console.log(gamesSort);
+    // console.log(gamesSort);
     return (
         <div> 
             <ImageSlider></ImageSlider>

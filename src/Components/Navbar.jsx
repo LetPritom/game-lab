@@ -10,7 +10,7 @@ import { ClipLoader } from "react-spinners";
 const Navbar = () => {
   const { id } = useParams();
 
-  const { user, logOutFunction, setUser, loading, updateProfileFunc } = useContext(AuthContext);
+  const { user, logOutFunction, setUser, loading,} = useContext(AuthContext);
 
   // console.log(user);
   console.log(loading);
@@ -25,12 +25,8 @@ const Navbar = () => {
       });
   };
 
-  // ekhane profile update function
 
-  const updateProfile =() => {
-    updateProfileFunc()
-
-  }
+  
   
 
   
@@ -66,7 +62,12 @@ const Navbar = () => {
               <li>
                 <NavLink to={`/detail/${id}`}>Details</NavLink>
               </li>
-              <li>{user && <NavLink to="/profile">Profile</NavLink>}</li>
+              <li>
+                <NavLink to='/About'>About</NavLink>
+              </li>
+              <li>
+                {user && <NavLink to="/profile">Profile</NavLink>}
+              </li>
             </ul>
           </div>
           <NavLink
@@ -102,7 +103,12 @@ const Navbar = () => {
               <li>
                 <NavLink to={`/detail/${id}`}>Details</NavLink>
               </li>
-              <li>{user && <NavLink to="/profile">Profile</NavLink>}</li>
+              <li>
+                <NavLink to='/about'>About</NavLink>
+              </li>
+              <li>
+                {user && <NavLink to="/profile">Profile</NavLink>}
+              </li>
             </ul>
           </div>
           {loading ? (

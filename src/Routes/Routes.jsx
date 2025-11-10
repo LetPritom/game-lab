@@ -8,6 +8,7 @@ import Error from "../pages/Error";
 import Profile from "../pages/Profile";
 import ForgetPass from "../pages/ForgetPass";
 import Private from "../PrivateRoute/Private";
+import AboutGame from "../pages/AboutGame";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/about",
+        element: <AboutGame></AboutGame>,
       },
       {
         path: "/profile",

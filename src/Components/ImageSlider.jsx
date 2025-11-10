@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import slider1 from "../assets/slider1.jpg";
@@ -28,6 +28,14 @@ const ImageSlider = () => {
     right1: { x: "50%", scale: 0.9, zIndex: 3, filter: "brightness(0.6)" },
   };
 
+   useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 3000); // 3s por por change hobe
+
+    return () => clearInterval(interval); // cleanup
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-center bg-black h-[90vh] container gap-1 w-11/12 mx-auto px-4 sm:px-8">
       <div className=" w-full flex justify-center items-center relative h-[400px]  ">
@@ -38,7 +46,7 @@ const ImageSlider = () => {
               src={image}
               alt={`Slide ${index}`}
               className="rounded-xl absolute w-[70vw] sm:w-[50vw] md:w-[40vw] lg:w-[30vw] bg-black/80 border-2 border-yellow-500 shadow-[0_0_20px_rgba(255,255,0,0.6)] 
-  hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,0,0.8)] transition-all duration-300 "
+                       hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,0,0.8)] transition-all duration-300 "
               initial="center"
               animate={positions[positionIndexes[index]]}
               variants={imageVariants}

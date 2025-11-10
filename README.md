@@ -1,16 +1,54 @@
-# React + Vite
+# 🕹️ GAME LAB 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🌐 Live Game-Lab link
+https://jesstopratedgame.netlify.app/
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Description
+Dark-Themed Gaming Showcase with Firebase Authentication. Game Lab is a visually striking, dark-themed React application designed to showcase games in a premium card layout. Built with modern frontend tools and Firebase authentication, it offers a secure and immersive experience for users exploring game details
 
-## React Compiler
+## 🚀 Tech Stack
+- Tailwind CSS + DaisyUI** – Utility-first styling with component
+- **React** – Component-based architecture
+- **React Router DOM** – Client-side routing and protected routes
+- **Firebase Auth** – Secure authentication and password reset
+- **Custom Hooks** – Dynamic page titles and reusable logic
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##  Features
 
-## Expanding the ESLint configuration
+- 🕹️ **Game Cards**: Each game is displayed in a glowing yellow card with hover effects and shadows.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔐 **Protected Routes**: Game detail pages and Profile are private—users must be signed in to access them.
+
+- 📄 **Dynamic Routing**: Clicking a game card navigates to its detail page using React Router.
+
+- 🌑 **Dark + Yellow Theme**: Inspired by gaming dashboards, the UI uses black backgrounds with yellow accents and glowing shadows.
+
+- 🔥 **Firebase Authentication**:
+  - Email/password sign-up with email verification and login
+  - Google sign-in
+  - Password reset with email verification
+
+
+- 📧 **Newsletter Section**: Users can subscribe for updates in a    glowing, responsive form
+
+- **Dynamic Title** available
+
+## 🔒 Route Protection
+
+Game detail pages are wrapped in a **Private** component. If a user is not authenticated, they are redirected to the login page. This ensures only verified users can access sensitive game data.
+
+
+#Responsive
+ *Responsive Design*  Works smoothly across desktop, tablet, and mobile
+
+#Game Buy
+*Game Buy* - Click Buy Now Button in Detail card to view game Package
+
+
+
+#Alert For Using Toastify
+*Toast Alerts* - Feedback for Login/Loguot actions
+
+#Dynamic Routing
+ *Dynamic Routing* - `/details/:id` routes with fallback handling.

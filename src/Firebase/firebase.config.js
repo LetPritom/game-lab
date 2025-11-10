@@ -6,12 +6,12 @@ import { initializeApp } from "firebase/app";
 // Your web app's Firebase configuration
 import { getAuth } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyB3KlNWPvBzTAUndHpovenJ8vBGT2h2DIA",
-  authDomain: "game-lab-fc53f.firebaseapp.com",
-  projectId: "game-lab-fc53f",
-  storageBucket: "game-lab-fc53f.firebasestorage.app",
-  messagingSenderId: "400922401287",
-  appId: "1:400922401287:web:ff7f6b47fb64f232fd68a2"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase

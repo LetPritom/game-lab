@@ -31,8 +31,8 @@ const Navbar = () => {
 
   
   return (
-    <div className="">
-      <div className="navbar bg-base-100 w-11/12 mx-auto m-2">
+    <div className="border-b border-[#ff9c07d7]">
+      <div className="navbar bg-base-100 w-10/12 mx-auto m-2">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -139,12 +139,7 @@ const Navbar = () => {
               >
                 <div className="down flex flex-col justify-center">
                   <NavLink to='/profile'>
-                    {" "}
-                    <img
-                      className=" my-2 w-8 h-8 rounded-full"
-                      src={user?.photoURL}
-                      alt=""
-                    />
+                    <p>Profile</p>
                   </NavLink>
                   <p className="text-sm font-semibold my-2">
                     {user?.displayName}
@@ -154,7 +149,7 @@ const Navbar = () => {
                 <div className="button">
                   <button
                     onClick={handleLogOut}
-                    className="border btn  border-[#ff9c07d7]"
+                    className="border cursor-pointer hover:border-white transition p-2 rounded-lg border-[#ff9c07d7]"
                   >
                     Log Out
                   </button>

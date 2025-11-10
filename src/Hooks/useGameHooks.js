@@ -8,7 +8,7 @@ const useGameHooks = () => {
     const [error , setError] = useState(null);
 
     useEffect(() => {
-        axios('../game.json')
+        axios('/game.json')
         .then((data) =>{ setGame(data.data)
             setLoading(false)
         })

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext, useRef } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import { toast } from "react-toastify";
@@ -11,8 +12,9 @@ const ForgetPass = () => {
   useTitle('Rest-password');
 
   const {
-
+    
     resetPasswordFunction ,
+    setLoading,
   } = useContext(AuthContext);
 
   const emailRef = useRef(null);
@@ -24,7 +26,11 @@ const ForgetPass = () => {
 
     resetPasswordFunction (email) 
     .then(() => {
+      setLoading(false)
       toast.success('success pass reset')
+      window.open("https://mail.google.com", "_blank");
+
+      emailRef.current.value = "";
     })
     .catch((err) => {
       toast.error(err.message);

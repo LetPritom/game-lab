@@ -108,7 +108,7 @@ const Register = () => {
                   type="text"
                   name="name"
                   className="input border border-white text-white placeholder-gray-500"
-                  placeholder="Pritom Roy"
+                  placeholder="Name"
                 />
 
                 {/* photo  url*/}

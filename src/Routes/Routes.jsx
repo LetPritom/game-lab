@@ -19,6 +19,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home></Home>,
+        loader:() => fetch('/game.json')
       },
       {
         path: "/detail/:id",
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
             <GameDetails></GameDetails>
           </Private>
         ),
+        loader:() => fetch('/game.json')
       },
       {
         path: "/login",
@@ -35,6 +37,7 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutGame></AboutGame>,
+        loader:() => fetch('/game.json')
       },
       {
         path: "/profile",
@@ -43,14 +46,17 @@ export const router = createBrowserRouter([
             <Profile></Profile>
           </Private>
         ),
+        loader:() => fetch('/game.json')
       },
       {
         path: "/register",
         element: <Register></Register>,
+        loader:() => fetch('/game.json')
       },
       {
         path: "/forget",
         element: <ForgetPass></ForgetPass>,
+        loader:() => fetch('/game.json')
       },
     ],
   },

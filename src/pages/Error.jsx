@@ -1,9 +1,11 @@
 import React from "react";
 import useTitle from "../Hooks/useDynamicTitle";
 import error from "../assets/warning.png";
-import { NavLink } from "react-router";
+import { NavLink, useLoaderData } from "react-router";
 
 const Error = () => {
+      // eslint-disable-next-line no-unused-vars
+      const loadingData = useLoaderData() ;
   useTitle("Error");
 
   return (

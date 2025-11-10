@@ -1,12 +1,15 @@
+/* eslint-disable no-unused-vars */
 
 import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 
-import { Link, useNavigate } from "react-router";
+import { Link, useLoaderData, useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import useTitle from '../Hooks/useDynamicTitle';
 
 const Register = () => {
+
+   const loadingData = useLoaderData() ;
 
   useTitle('Register')
 

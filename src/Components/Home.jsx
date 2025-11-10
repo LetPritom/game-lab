@@ -1,10 +1,14 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import useGameHooks from '../Hooks/useGameHooks';
 import GameSection from '../pages/GameSection';
 import ImageSlider from './ImageSlider';
 import useTitle from '../Hooks/useDynamicTitle';
+import Newsslater from '../pages/Newsslater';
+import { useLoaderData } from 'react-router';
 
 const Home = () => {
+      const loadingData = useLoaderData() ;
 
       useTitle('Home');
     const {games} =useGameHooks();
@@ -24,6 +28,7 @@ const Home = () => {
             }
             
             </div>
+            <Newsslater></Newsslater>
         </div>
     );
 };

@@ -1,9 +1,14 @@
+/* eslint-disable no-unused-vars */
 import React, { use } from "react";
 import useTitle from "../Hooks/useDynamicTitle";
 import { AuthContext } from "../Context/AuthContext";
 import { toast } from "react-toastify";
+import { useLoaderData } from "react-router";
 
 const Profile = () => {
+
+   const loadingData = useLoaderData() ;
+   
   useTitle("Profile");
 
   const { updateProfileFunc, setLoading, user } = use(AuthContext);

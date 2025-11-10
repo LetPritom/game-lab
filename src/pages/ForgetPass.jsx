@@ -2,8 +2,11 @@ import React, { useContext, useRef } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import { toast } from "react-toastify";
 import useTitle from "../Hooks/useDynamicTitle";
+import { useLoaderData } from "react-router";
 
 const ForgetPass = () => {
+
+    const loadingData = useLoaderData() ;
   
   useTitle('Rest-password');
 

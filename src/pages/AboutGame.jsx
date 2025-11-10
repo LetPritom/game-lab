@@ -1,7 +1,10 @@
 import React from "react";
 import useTitle from "../Hooks/useDynamicTitle";
+import { useLoaderData } from "react-router";
 
 const AboutGame = () => {
+      // eslint-disable-next-line no-unused-vars
+      const loadingData = useLoaderData() ;
   useTitle("About");
   return (
     <div className="min-h-screen bg-[#0b0b0b] text-gray-300 flex flex-col items-center justify-center px-6 py-16">

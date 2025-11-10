@@ -1,9 +1,11 @@
 import React from "react";
-import { useParams } from "react-router";
+import { useLoaderData, useParams } from "react-router";
 import useGameHooks from "../Hooks/useGameHooks";
 import useTitle from "../Hooks/useDynamicTitle";
 
 const GameDetails = () => {
+
+  const loadingData = useLoaderData() ;
 
   useTitle('Game Details');
 
@@ -14,9 +16,8 @@ const GameDetails = () => {
   const matchGame = games.find((game) => String(game.id) === id);
   if (!matchGame)
     return (
-      <div className=" text-3xl text-[#ff9c07d7] h-[50vh] flex justify-center items-center w-11/12 mx-auto">
-       Please Go to Home Section and Click any Game card Of Popular Game and See Game
-        Details
+      <div className=" text-3xl font-bold text-[#ff9c07d7] h-[50vh] flex justify-center items-center w-11/12 mx-auto">
+       Click a game card in Popular Games to see details
       </div>
     );
   // console.log(matchGame);

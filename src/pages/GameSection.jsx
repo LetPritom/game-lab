@@ -1,10 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { NavLink, useLoaderData } from 'react-router';
 import rating from '../assets/icon-ratings.png'
 
 const GameSection = ({game}) => {
     const {id} = game;
     // console.log(id);
+    const loadingData = useLoaderData() ;
     return (
         <div>
       <NavLink to={`/detail/${id}`}>
